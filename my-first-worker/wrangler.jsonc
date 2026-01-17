@@ -1,0 +1,47 @@
+{
+  "name": "my-first-worker",
+  "main": "src/index.js",
+  "workers_dev": true,
+  "preview_urls": true,
+  "compatibility_date": "2024-09-23",
+  "observability": {
+    "enabled": true,
+    "head_sampling_rate": 1,
+    "logs": {
+      "enabled": true,
+      "head_sampling_rate": 1,
+      "persist": true,
+      "invocation_logs": true
+    },
+    "traces": {
+      "enabled": false,
+      "persist": true,
+      "head_sampling_rate": 1
+    }
+  },
+  "ai": {
+    "binding": "AI"
+  },
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_id": "ef228575-fb3a-4248-9b93-6e72f9fd872d"
+    }
+  ],
+  "workflows": [
+    {
+      "binding": "FEEDBACK_WORKFLOW",
+      "name": "feedback-notification-workflow",
+      "class_name": "FeedbackNotificationWorkflow"
+    }
+  ],
+  "vectorize": [
+    {
+      "binding": "VECTORIZE",
+      "index_name": "feedback-index"
+    }
+  ],
+  "vars": {
+    "WORKER_URL": "http://localhost:8787"
+  }
+}
